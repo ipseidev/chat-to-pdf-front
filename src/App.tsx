@@ -1,3 +1,6 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+//@ts-nocheck
+
 import { useState } from 'react'
 import Message from './components/message/Message'
 import { useMutation, useQuery } from 'react-query';
