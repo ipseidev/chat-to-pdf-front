@@ -16,7 +16,7 @@ function App() {
   }]);
 
   const mutation = useMutation((question) =>
-    axios.post("http://82.165.79.190/query", { question: question }), {
+    axios.post("https://thebalderz.com/query", { question: question }), {
       onSuccess: (data) => {
         console.log(data.data);
         setConversation((prev)  => [...prev, {message: data.data.answer, avatar: "B", side: "left"}]);
@@ -25,7 +25,7 @@ function App() {
   );
 
   const getPdfTitle = () => {
-   return axios.get("http://82.165.79.190/current_title");
+   return axios.get("https://thebalderz.com/current_title");
   }
 
   const pdfTitle = useQuery("pdfTitle", getPdfTitle);
