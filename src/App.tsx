@@ -38,9 +38,6 @@ function App() {
   };
 
 
-  if(pdfTitle.data) {
-    console.log(pdfTitle.data);
-  }
 
   return (
     <div className="flex h-screen antialiased text-gray-800">
@@ -88,7 +85,7 @@ function App() {
             >
               <div className="flex flex-col h-full overflow-x-auto mb-4">
                 <div className="flex flex-col h-full">
-                  <div className="grid grid-cols-12 gap-y-2">
+                  <div className="grid-cols-12 gap-y-2">
                     {
                       conversation.map((message, index) => {
                         return <Message key={index} message={message.message} avatar={message.avatar} side={message.side}/>
@@ -101,6 +98,11 @@ function App() {
                 className="flex flex-row items-center h-16 rounded-xl bg-white w-full px-4"
               >
                 
+                {
+                  mutation.isLoading && <div className="flex items-center justify-center bg-indigo-500 hover:bg-indigo-600 rounded-xl text-white px-4 py-1 flex-shrink-0">
+                    <span>Chargement...</span>
+                  </div>
+                }
                 <div className="flex-grow ml-4">
                   <div className="relative w-full">
                     <input
